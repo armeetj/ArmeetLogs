@@ -1,2 +1,0 @@
-# ArmeetLogs
-Armeets Logs
