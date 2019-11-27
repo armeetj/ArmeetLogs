@@ -1,4 +1,3 @@
-
 {
     "2019": [
         {
@@ -20,7 +19,10 @@
         {
             "date": "2019-11-27",
             "message": "test"
+        },
+        {
+            "date": "2019-11-27",
+            "message": "test if this works"
         }
     ]
 }
-
