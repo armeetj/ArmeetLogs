@@ -23,6 +23,10 @@
         {
             "date": "2019-11-27",
             "message": "test if this works"
+        },
+        {
+            "date": "2019-11-27",
+            "message": "testing pull"
         }
     ]
 }

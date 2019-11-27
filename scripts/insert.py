@@ -10,9 +10,10 @@ ENTRY_MESSAGE = ''
 def git_push(COMMIT_MESSAGE):
     try:
         repo = Repo(PATH_OF_GIT_REPO)
+        origin = repo.remote(name='origin')
+        origin.pull()
         repo.git.add(["."])
         repo.index.commit(COMMIT_MESSAGE)
-        origin = repo.remote(name='origin')
         origin.push()
     except:
         print('Some error occured while pushing the code')    
