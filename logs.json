@@ -15,10 +15,6 @@
         {
             "date": "2019-11-27",
             "message": "finally finished insert.py (now works for pushing to github and automatically handles json file)"
-        },
-        {
-            "date": "2019-11-27",
-            "message": "new message"
         }
     ]
 }
