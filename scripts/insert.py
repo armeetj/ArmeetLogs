@@ -4,18 +4,10 @@ from git import Repo
 import time 
 
 PATH_OF_GIT_REPO = r'.git'  # make sure .git folder is properly configured
-COMMIT_MESSAGE = ''
 TODAY_DATE =str(datetime.date.today())
-print("date: " + TODAY_DATE)
-print("enter message for today: ")
-message = input()
+ENTRY_MESSAGE = '' 
 
-#confirmation
-print("date: " + TODAY_DATE)
-print("message: " + message)
-print("confirm? (y) or (n): ")
-
-def git_push():
+def git_push(COMMIT_MESSAGE):
     try:
         repo = Repo(PATH_OF_GIT_REPO)
         repo.git.add(["."])
@@ -25,12 +17,38 @@ def git_push():
     except:
         print('Some error occured while pushing the code')    
 
+def add_entry(TODAY_DATE, ENTRY_MESSAGE):
+    #read file and convert to dict
+    logsFile = open('logs.json', 'r+')
+    logsFileRaw = logsFile.read()
+    pythonLogs = json.loads(logsFileRaw)
+    pythonLogs[str(split(TODAY_DATE, '-')[0])]
+    print(pythonLogs)
+print("ADD ENTRY")
+print("================================================")
+print("date: " + TODAY_DATE)
+print("enter message for today: ")
+ENTRY_MESSAGE = input()
+
+print()
+#confirmation
+print("CONFIRMATION")
+print("================================================")
+print("date: " + TODAY_DATE)
+print("message: " + ENTRY_MESSAGE)
+print("confirm? (y) or (n): ")
+
 if(input() == 'y'):
-    git_push()
+    git_push(TODAY_DATE)
+    print()
+    print("OUTPUT")
+    print("================================================")
     print("success! closing in 5 seconds...")
     time.sleep(5);
     exit();
 else:
+    print("OUTPUT")
+    print("================================================")
     print("cancelled, stopping in 5 seconds...")
     time.sleep(5);
     exit();
