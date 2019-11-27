@@ -23,7 +23,12 @@ def add_entry(TODAY_DATE, ENTRY_MESSAGE):
     logsFileRaw = logsFile.read()
     logsFile = open('logs.json', 'w+')
     pythonLogs = json.loads(logsFileRaw)
-    pythonLogs[str(TODAY_DATE.split('-')[0])].append({"date":TODAY_DATE, "message": ENTRY_MESSAGE})
+    try:
+        pythonLogs[str(TODAY_DATE.split('-')[0])].append({"date":TODAY_DATE, "message": ENTRY_MESSAGE})
+    except:
+        pythonLogs[str(TODAY_DATE.split('-')[0])] = {}
+        pythonLogs[str(TODAY_DATE.split('-')[0])].append({"date":TODAY_DATE, "message": ENTRY_MESSAGE})
+
     logsFile.write(json.dumps(pythonLogs, indent=4, separators=(',', ': ')))
 
 print("ADD ENTRY")
@@ -47,6 +52,7 @@ if(input() == 'y'):
     print("OUTPUT")
     print("================================================")
     print("entry added...")
+    print("pushed to git...")
     print("success! closing in 5 seconds...")
     time.sleep(5);
     exit();
