@@ -26,10 +26,15 @@ def add_entry(TODAY_DATE, ENTRY_MESSAGE):
     try:
         pythonLogs[str(TODAY_DATE.split('-')[0])].append({"date":TODAY_DATE, "message": ENTRY_MESSAGE})
     except:
-        pythonLogs[str(TODAY_DATE.split('-')[0])] = []
-        pythonLogs[str(TODAY_DATE.split('-')[0])].append({"date":TODAY_DATE, "message": ENTRY_MESSAGE})
-
+        try:    
+            pythonLogs[str(TODAY_DATE.split('-')[0])] = []
+            pythonLogs[str(TODAY_DATE.split('-')[0])].append({"date":TODAY_DATE, "message": ENTRY_MESSAGE})
+        except:
+            logsFileRaw.write(logsFileRaw)
+            return
     logsFile.write(json.dumps(pythonLogs, indent=4, separators=(',', ': ')))
+    mdfile = open("logs.md", "w+")
+    mdfile.write(json.dumps(pythonLogs, indent=4, separators=(',', ': ')))
 
 print("ADD ENTRY")
 print("================================================")
