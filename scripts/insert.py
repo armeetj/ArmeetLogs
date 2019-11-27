@@ -33,8 +33,8 @@ def add_entry(TODAY_DATE, ENTRY_MESSAGE):
             logsFileRaw.write(logsFileRaw)
             return
     logsFile.write(json.dumps(pythonLogs, indent=4, separators=(',', ': ')))
-    mdfile = open("logs.md", "w+")
-    mdfile.write(json.dumps(pythonLogs, indent=4, separators=(',', ': ')))
+    mdfile = open("README.md", "w+")
+    mdfile.write(json.dumps(pythonLogs, indent=4, separators=(',', ': ') ))
 
 print("ADD ENTRY")
 print("================================================")
