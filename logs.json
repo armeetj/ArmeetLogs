@@ -14,13 +14,7 @@
         },
         {
             "date": "2019-11-27",
-            "message": "testof 2020"
-        }
-    ],
-    "2020": [
-        {
-            "date": "2020-test-test",
-            "message": "test 2020"
+            "message": "finally finished insert.py (now works for pushing to github and automatically handles json file)"
         }
     ]
 }

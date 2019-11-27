@@ -46,7 +46,7 @@ print("message: " + ENTRY_MESSAGE)
 print("confirm? (y) or (n): ")
 
 if(input() == 'y'):
-    add_entry("2020-test-test", ENTRY_MESSAGE)
+    add_entry(TODAY_DATE, ENTRY_MESSAGE)
     git_push(TODAY_DATE)
     print()
     print("OUTPUT")
