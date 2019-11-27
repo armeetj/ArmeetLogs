@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 {
     "2019": [
         {
@@ -23,7 +23,4 @@
         }
     ]
 }
-=======
-# ArmeetLogs
-Armeets Logs
->>>>>>> parent of 18d1ed0... took out readme
+
