@@ -26,7 +26,7 @@ def add_entry(TODAY_DATE, ENTRY_MESSAGE):
     try:
         pythonLogs[str(TODAY_DATE.split('-')[0])].append({"date":TODAY_DATE, "message": ENTRY_MESSAGE})
     except:
-        pythonLogs[str(TODAY_DATE.split('-')[0])] = {}
+        pythonLogs[str(TODAY_DATE.split('-')[0])] = []
         pythonLogs[str(TODAY_DATE.split('-')[0])].append({"date":TODAY_DATE, "message": ENTRY_MESSAGE})
 
     logsFile.write(json.dumps(pythonLogs, indent=4, separators=(',', ': ')))
@@ -46,7 +46,7 @@ print("message: " + ENTRY_MESSAGE)
 print("confirm? (y) or (n): ")
 
 if(input() == 'y'):
-    add_entry(TODAY_DATE, ENTRY_MESSAGE)
+    add_entry("2020-test-test", ENTRY_MESSAGE)
     git_push(TODAY_DATE)
     print()
     print("OUTPUT")
