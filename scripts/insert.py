@@ -21,9 +21,12 @@ def add_entry(TODAY_DATE, ENTRY_MESSAGE):
     #read file and convert to dict
     logsFile = open('logs.json', 'r+')
     logsFileRaw = logsFile.read()
+    time.sleep(5);
+    logsFile = open('logs.json', 'w+')
     pythonLogs = json.loads(logsFileRaw)
-    pythonLogs[str(split(TODAY_DATE, '-')[0])]
-    print(pythonLogs)
+    pythonLogs[str(TODAY_DATE.split('-')[0])].append({"date":TODAY_DATE, "message": ENTRY_MESSAGE})
+    logsFile.write(json.dumps(pythonLogs))
+
 print("ADD ENTRY")
 print("================================================")
 print("date: " + TODAY_DATE)
@@ -39,10 +42,12 @@ print("message: " + ENTRY_MESSAGE)
 print("confirm? (y) or (n): ")
 
 if(input() == 'y'):
+    add_entry(TODAY_DATE, ENTRY_MESSAGE)
     git_push(TODAY_DATE)
     print()
     print("OUTPUT")
     print("================================================")
+    print("entry added...")
     print("success! closing in 5 seconds...")
     time.sleep(5);
     exit();
