@@ -15,18 +15,6 @@
         {
             "date": "2019-11-27",
             "message": "finally finished insert.py (now works for pushing to github and automatically handles json file)"
-        },
-        {
-            "date": "2019-11-27",
-            "message": "test"
-        },
-        {
-            "date": "2019-11-27",
-            "message": "test if this works"
-        },
-        {
-            "date": "2019-11-27",
-            "message": "testing pull"
         }
     ]
 }
