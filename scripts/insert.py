@@ -21,7 +21,6 @@ def add_entry(TODAY_DATE, ENTRY_MESSAGE):
     #read file and convert to dict
     logsFile = open('logs.json', 'r+')
     logsFileRaw = logsFile.read()
-    time.sleep(5);
     logsFile = open('logs.json', 'w+')
     pythonLogs = json.loads(logsFileRaw)
     pythonLogs[str(TODAY_DATE.split('-')[0])].append({"date":TODAY_DATE, "message": ENTRY_MESSAGE})
