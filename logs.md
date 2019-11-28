@@ -31,6 +31,10 @@
         {
             "date": "2019-11-27",
             "message": "we are making pie"
+        },
+        {
+            "date": "2019-11-28",
+            "message": "reviewed for SAT Physics test (got through electricity so far)"
         }
     ]
 }
