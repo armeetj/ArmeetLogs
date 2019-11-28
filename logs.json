@@ -39,6 +39,10 @@
         {
             "date": "2019-11-28",
             "message": "testing the open git feature"
+        },
+        {
+            "date": "2019-11-28",
+            "message": "another test of github opening in new tab"
         }
     ]
 }

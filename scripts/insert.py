@@ -8,6 +8,7 @@ import webbrowser
 PATH_OF_GIT_REPO = r'.git'  # make sure .git folder is properly configured
 TODAY_DATE =str(datetime.date.today())
 ENTRY_MESSAGE = '' 
+GITHUB_LINK = "https://github.com/xarmeetx/ArmeetLogs"
 
 def git_push(COMMIT_MESSAGE):
     try:
@@ -64,7 +65,7 @@ if(input() == 'y'):
     print("open git repo? (y) or (n): ")
     strin = input()
     if(strin == 'y'):
-        webbrowser.open_new_tab("http://www.google.com")
+        webbrowser.open_new_tab(GITHUB_LINK)
     print("success! closing in 5 seconds...")
     time.sleep(5);
     exit();
@@ -75,6 +76,6 @@ else:
     print("open git repo? (y) or (n): ")
     strin = input()
     if(strin == 'y'):
-        webbrowser.open_new_tab("http://www.google.com")
+        webbrowser.open_new_tab(GITHUB_LINK)
     time.sleep(5);
     exit();
