@@ -5,7 +5,7 @@ Finally it will push the logs up to github.
 There is an option to open the github repo from the terminal.
 
 
-
+lets make another entry...
 
 
 
