@@ -1,0 +1,45 @@
+Made a little program that keeps log of what you do.
+You can add entries for each day.
+It will compile your entries into a json file which can be used later.
+Finally it will push the logs up to github.
+There is an option to open the github repo from the terminal.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+I am working on making this an in command line feature that could be added to the path
+Maybe even an exe file
+Also, thinking about making it a per project log, where people can run commands like
+log -m "Worked on _____ today"
+json might look like...
+
+{
+	"2019":[
+		{
+		"author": "Armeet Jatyani",
+		"date": "year-month-day"m
+		"commitHash": "github commit hash (number)",
+		"message": "content of log",
+	]
+}
+
+
