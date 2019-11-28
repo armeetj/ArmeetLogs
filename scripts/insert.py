@@ -2,6 +2,8 @@ import json
 import datetime
 from git import Repo
 import time 
+import webbrowser
+
 
 PATH_OF_GIT_REPO = r'.git'  # make sure .git folder is properly configured
 TODAY_DATE =str(datetime.date.today())
@@ -59,6 +61,10 @@ if(input() == 'y'):
     print("================================================")
     print("entry added...")
     print("pushed to git...")
+    print("open git repo? (y) or (n): ")
+    strin = input()
+    if(strin == 'y'):
+        webbrowser.open_new_tab("http://www.google.com")
     print("success! closing in 5 seconds...")
     time.sleep(5);
     exit();
@@ -66,5 +72,9 @@ else:
     print("OUTPUT")
     print("================================================")
     print("cancelled, stopping in 5 seconds...")
+    print("open git repo? (y) or (n): ")
+    strin = input()
+    if(strin == 'y'):
+        webbrowser.open_new_tab("http://www.google.com")
     time.sleep(5);
     exit();

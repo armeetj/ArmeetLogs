@@ -35,6 +35,10 @@
         {
             "date": "2019-11-28",
             "message": "reviewed for SAT Physics test (got through electricity so far)"
+        },
+        {
+            "date": "2019-11-28",
+            "message": "testing the open git feature"
         }
     ]
 }
