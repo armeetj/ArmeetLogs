@@ -7,6 +7,10 @@
         {
             "date": "2019-11-28",
             "message": "this is a test of the entry system"
+        },
+        {
+            "date": "2019-11-28",
+            "message": "adding another message entry for today"
         }
     ]
 }
