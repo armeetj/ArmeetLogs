@@ -47,6 +47,10 @@
         {
             "date": "2019-11-28",
             "message": "made video to demonstrate program"
+        },
+        {
+            "date": "2019-11-28",
+            "message": "added code that finds the git url"
         }
     ]
 }

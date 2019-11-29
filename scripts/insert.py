@@ -3,13 +3,19 @@ import datetime
 from git import Repo
 import time 
 import webbrowser
-
+import configparser
 
 PATH_OF_GIT_REPO = r'.git'  # make sure .git folder is properly configured
 TODAY_DATE =str(datetime.date.today())
 ENTRY_MESSAGE = '' 
-GITHUB_LINK = "https://github.com/xarmeetx/ArmeetLogs"
+GITHUB_LINK = ""
 
+configParser = configparser.RawConfigParser()   
+configFilePath = '.git/config'
+configParser.read(configFilePath)
+
+GITHUB_LINK = configParser.get('remote "origin"', 'url')
+print(GITHUB_LINK)
 def git_push(COMMIT_MESSAGE):
     try:
         repo = Repo(PATH_OF_GIT_REPO)
@@ -23,9 +29,9 @@ def git_push(COMMIT_MESSAGE):
 
 def add_entry(TODAY_DATE, ENTRY_MESSAGE):
     #read file and convert to dict
-    logsFile = open('logs.json', 'r+')
+    logsFile = open('logs/logs.json', 'r+')
     logsFileRaw = logsFile.read()
-    logsFile = open('logs.json', 'w+')
+    logsFile = open('logs/logs.json', 'w+')
     pythonLogs = json.loads(logsFileRaw)
     try:
         pythonLogs[str(TODAY_DATE.split('-')[0])].append({"date":TODAY_DATE, "message": ENTRY_MESSAGE})
@@ -37,7 +43,7 @@ def add_entry(TODAY_DATE, ENTRY_MESSAGE):
             logsFileRaw.write(logsFileRaw)
             return
     logsFile.write(json.dumps(pythonLogs, indent=4, separators=(',', ': ')))
-    mdfile = open("logs.md", "w+")
+    mdfile = open("logs/logs.md", "w+")
     mdfile.write(json.dumps(pythonLogs, indent=4, separators=(',', ': ')))
 
 print("ADD ENTRY")
